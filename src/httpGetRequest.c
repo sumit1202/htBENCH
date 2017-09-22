@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
         server->h_length);
   serv_addr.sin_port = htons(portno);
 
-  if (connect(sockfd, &serv_addr, sizeof(serv_addr)) < 0)
+  if (connect(sockfd,(struct sockaddr*)&serv_addr, sizeof(serv_addr)) < 0)
     error("ERROR connecting");
 
   n = write(sockfd, "GET /\r\n", strlen("GET /\r\n"));
