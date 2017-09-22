@@ -8,12 +8,14 @@
 #include <netinet/in.h> /* struct sockaddr_in, struct sockaddr */
 #include <netdb.h>      /* struct hostent, gethostbyname */
 
+// Method that calls perror method and print out the error
 void error(const char *msg)
 {
   perror(msg);
   exit(0);
 }
 
+// Buffer to store the respons message
 #define BUFFER_SIZE 6387162
 
 int main(int argc, char *argv[])
